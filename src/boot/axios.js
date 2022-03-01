@@ -3,7 +3,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import store from 'src/store'
 
-export const api = axios.create({ baseURL: process.env.VUE_ENV_API })
+export const api = axios.create({ baseURL: process.env.VUE_APP_API })
 
 api.interceptors.response.use(res => {
   return res
