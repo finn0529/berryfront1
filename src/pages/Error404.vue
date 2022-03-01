@@ -11,6 +11,6 @@
 
 <script>
 export default {
-  name: 'Error404'
+  name: '404'
 }
 </script>
