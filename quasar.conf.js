@@ -51,7 +51,10 @@ module.exports = function (/* ctx */) {
 
     // Full list of options: https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
-      env: require('dotenv').config().parsed,
+      env: {
+        ...require('dotenv').config().parsed,
+        VUE_APP_API:process.env.VUE_APP_API
+        },
       extendWebpack (cfg) {
         cfg.module.rules.push({
           test: /\.pug$/,
