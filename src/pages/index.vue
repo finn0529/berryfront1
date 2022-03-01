@@ -5,7 +5,7 @@ q-page
     .wrapper
       swiper(ref='mySwiper' :options='swiperOptions')
         swiper-slide
-          img(src='../assets/img/product/IMG_0114.jpg')
+          img(src='../assets/img/product/IMG_1022.jpg')
         swiper-slide
           img(src='../assets/img/product/IMG_0120.jpg')
         swiper-slide
@@ -28,7 +28,7 @@ q-page
       img(src="../assets/img/截圖 2022-02-08 下午1.59.33.png")
   section#section03
     #product01
-      img(src='../assets/img/product/IMG_0114.jpg')
+      img(src='../assets/img/product/IMG_1022.jpg')
     #product02
       img(src='../assets/img/product/IMG_0120.jpg')
     #product03
