@@ -1,0 +1,65 @@
+{
+  "name": "front",
+  "version": "0.0.1",
+  "description": "A Quasar Framework app",
+  "productName": "Quasar App",
+  "author": "finn0529 <rockerman0074@gmail.com>",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js,.vue ./",
+    "test": "echo \"No test specified\" && exit 0",
+    "win-dev": "SET NODE_OPTIONS=--openssl-legacy-provider && quasar dev",
+    "win-build": "SET NODE_OPTIONS=--openssl-legacy-provider && quasar build",
+    "dev": "quasar dev",
+    "build": "quasar build"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.0.0",
+    "axios": "^0.21.4",
+    "core-js": "^3.6.5",
+    "css": "^3.0.0",
+    "dotenv": "^16.0.0",
+    "pug": "^3.0.2",
+    "pug-plain-loader": "^1.1.0",
+    "quasar": "^1.0.0",
+    "swiper": "^8.0.3",
+    "twzipcode-data": "^2.0.0",
+    "twzipcode-vue": "^2.2.2",
+    "validator": "^13.7.0",
+    "vue": "^2.6.14",
+    "vue-awesome-swiper": "^2.6.7",
+    "vue-axios": "^3.4.1",
+    "vue-i18n": "^8.0.0",
+    "vue-img-inputer": "^2.1.6",
+    "vue-upload-multiple-image": "^1.1.6",
+    "vue2-dropzone": "^3.6.0",
+    "vuex-persistedstate": "^3.2.1"
+  },
+  "devDependencies": {
+    "@quasar/app": "^2.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^7.21.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-vue": "^7.7.0",
+    "eslint-webpack-plugin": "^2.4.0"
+  },
+  "browserslist": [
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
+  "engines": {
+    "node": ">= 10.18.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}

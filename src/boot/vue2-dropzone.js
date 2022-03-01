@@ -1,0 +1,6 @@
+import Vue from 'vue'
+import vue2Dropzone from 'vue2-dropzone'
+import 'vue2-dropzone/dist/vue2Dropzone.min.css'
+
+Vue.use(vue2Dropzone)
+Vue.component('vueDropzone', vue2Dropzone)
