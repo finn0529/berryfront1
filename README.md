@@ -1,6 +1,6 @@
 # Quasar App (front)
 
-A Quasar Framework app
+A Quasar Framework
 
 ## Install the dependencies
 ```bash
