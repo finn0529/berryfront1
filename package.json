@@ -10,8 +10,9 @@
     "test": "echo \"No test specified\" && exit 0",
     "win-dev": "SET NODE_OPTIONS=--openssl-legacy-provider && quasar dev",
     "win-build": "SET NODE_OPTIONS=--openssl-legacy-provider && quasar build",
-    "dev-linux": "SET NODE_OPTIONS=--openssl-legacy-provider && quasar dev",
-    "build-linux": "SET NODE_OPTIONS=--openssl-legacy-provider && quasar build",
+    "dev-linux": "export SET NODE_OPTIONS=--openssl-legacy-provider && quasar dev",
+    "build-linux": "export SET NODE_OPTIONS=--openssl-legacy-provider && quasar build",
+    "serve-linux": "export SET NODE_OPTIONS=--openssl-legacy-provider && quasar serve",
     "dev": "quasar dev",
     "build": "quasar build"
   },
