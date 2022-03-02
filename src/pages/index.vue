@@ -164,6 +164,7 @@ export default {
     position: relative
   .featured
     position: relative
+    overflow: hidden
     img
       position: absolute
       height: 100%
