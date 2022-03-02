@@ -7,7 +7,6 @@
 // https://v1.quasar.dev/quasar-cli/quasar-conf-js
 /* eslint-env node */
 const ESLintPlugin = require('eslint-webpack-plugin')
-const env = require('dotenv').config().parsed
 
 module.exports = function (/* ctx */) {
   return {
@@ -52,9 +51,7 @@ module.exports = function (/* ctx */) {
 
     // Full list of options: https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
-      env: {
-        VUE_ENV_API: env?.VUE_ENV_API || process.env.VUE_ENV_API
-        },
+      env: require('dotenv').config().parsed,
       extendWebpack (cfg) {
         cfg.module.rules.push({
           test: /\.pug$/,
