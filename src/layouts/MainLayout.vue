@@ -9,16 +9,16 @@
             img(src="../assets/img/berry.png" width="100px")
         .gt-xs
           q-btn(flat to='/')
-            span(style="color: #fff") 首頁
+            span(style="color: rgb(250, 108, 132)") 首頁
           q-btn(flat)
-            span(style="color: #fff") 最新消息
+            span(style="color: rgb(250, 108, 132)") 最新消息
           q-btn(flat to='/product')
-            span(style="color: #fff") 所有商品
+            span(style="color: rgb(250, 108, 132)") 所有商品
           q-btn(flat)
-            span(style="color: #fff") 購物須知
+            span(style="color: rgb(250, 108, 132)") 購物須知
           q-btn(v-if="!user.isLogin" flat round @click='signin = true' )
-            img(src="../assets/icon/login.svg" width="25px")
-          q-btn-dropdown(flat v-if="user.isLogin" label='會員管理' style="color: #fff")
+            img(src="../assets/icon/login_工作區域 1.png" width="25px")
+          q-btn-dropdown(flat v-if="user.isLogin" label='會員管理' style="color: rgb(250, 108, 132)")
             q-list
               q-item(clickable to='/order')
                 q-item-section
@@ -26,10 +26,10 @@
               q-item(clickable flat @click="logout")
                 q-item-section
                   q-item-label 登出
-        q-btn(flat round)
-          img(src="../assets/icon/search.svg" width="25px")
+        q-btn(flat round )
+          img(src="../assets/icon/search_工作區域 1.png" width="25px")
         q-btn(v-if="user.isLogin" flat round to="/cart")
-          img(src="../assets/icon/cart.svg" width="25px")
+          img(src="../assets/icon/cart_工作區域 1.png" width="25px")
           q-badge( v-if="user.cart>=1" rounded color='red' style="position: absolute; right:-5px; top:0;") {{ user.cart }}
         //登入
         q-dialog(v-model='signin' persistent)
@@ -80,12 +80,25 @@
               q-item-section 登出
     q-page-container
       router-view
+    q-footer.text-center(style="padding:30px; height:200px; background:rgb(255, 171, 185)")
+      p 關注我們
+      .footerBtn.d-flex
+        q-btn(flat round)
+          i.fa-brands.fa-facebook.fa-xl
+        q-btn(flat round)
+          i.fa-brands.fa-instagram.fa-xl
+        q-btn(flat round)
+          i.fa-brands.fa-twitter.fa-xl
+        q-btn(flat round)
+          i.fa-brands.fa-pinterest.fa-xl
+      p © 2022 小莓波醬.
+      p(style="font-size: 25px;") 小莓波醬測試網站 下單交易不成立
 </template>
 
 <style lang="sass">
   #mainLayout
     .q-btn
-      color: #ff7e8f
+      color: rgb(250, 108, 132)
     .q-field__label
       color: #ff7e8f
     .q-drawer

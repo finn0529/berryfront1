@@ -1,12 +1,14 @@
 <template lang="pug">
 q-page
-  .row(style="padding:100px ; padding-top:150px ;")
-    .col-12.col-md-6
+  .row(style="padding:50px ; padding-top:170px ;")
+    .col-12.col-md-6.text-center
       img(:src="image" style="height: 600px;")
     .col-12.col-md-6
-      p {{ name }}
-      q-input(outlined v-model.number='quantity' color='black' bg-color='white' type='number' style="width:50px;" min='1')
+      h3 {{ name }}
+      p 數量
+      q-input(outlined v-model.number='quantity' color='black' bg-color='white' type='number' style="width:50px; margin-bottom:20px" min='1')
       q-btn.addcart(unelevated rounded color="redpink" label="加入購物車" @click='addCart')
+      p.q-mt-lg(v-html='description')
 </template>
 <script>
 export default {
@@ -15,6 +17,7 @@ export default {
       name: '',
       price: 0,
       image: '',
+      description: '',
       sell: false,
       category: '',
       quantity: 1

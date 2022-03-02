@@ -2,7 +2,7 @@
 q-layout
   q-header(style="background:#ffffff ;")
     q-toolbar
-      q-btn.lt-sm(flat @click='drawerLeft = !drawerLeft' round dense icon='menu')
+      q-btn.lt-sm(flat @click='drawerLeft = !drawerLeft' round dense icon='menu' color='black')
       q-toolbar-title
         q-btn(flat to='/admin')
           img(src="../assets/img/berry.png" width="100px")

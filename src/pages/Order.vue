@@ -2,20 +2,20 @@
 q-page
   .row(style="padding:50px ; padding-top:150px ;")
     .col
-      q-table(ref='table' title='Treats' :data='orders' :columns='columns' row-key='name' :selected-rows-label='getSelectedString' selection='multiple' :selected='selected' @selection='onSelection' :pagination.sync="pagination")
+      q-table(ref='table' title='Treats' :data='orders' :columns='columns' row-key='name' :selected-rows-label='getSelectedString' selection='multiple' :selected='selected' @selection='onSelection' :pagination.sync="pagination" style="background: none; box-shadow:none")
         template(v-slot:body="props")
           q-tr
-            q-td
+            q-td.text-center
               q-checkbox(dense v-model="props.selected")
-            q-td {{ props.row._id }}
-            q-td {{ props.row.date }}
-            q-td
+            q-td.text-center {{ props.row._id }}
+            q-td.text-center {{ props.row.date }}
+            q-td.text-center
               p(v-if="props.row.pay") 已付款
               p(v-else) 未付款
-            q-td
+            q-td.text-center
               p(v-if="props.row.ship") 已出貨
               p(v-else) 未出貨
-            q-td NT$ {{ total(props.row) }}
+            q-td.text-center NT$ {{ total(props.row) }}
 </template>
 
 <script>

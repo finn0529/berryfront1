@@ -77,8 +77,8 @@
       :max-size="1024"
       exceed-size-text="檔案大小不能超過"></img-inputer>
       <div>
-        <q-radio dense v-model="form.sell" val="true" label="已上架" />
-        <q-radio dense v-model="form.sell" val="false" label="未上架" />
+        <q-radio dense v-model="form.sell" :val="true" label="已上架" />
+        <q-radio dense v-model="form.sell" :val="false" label="未上架" />
       </div>
       <q-btn color="white" text-color="black" @click="cancelSave" to="/admin/products">取消</q-btn>
       <q-btn color="blue-5" type="submitprevent">儲存</q-btn>

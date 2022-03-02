@@ -28,7 +28,8 @@ module.exports = function (/* ctx */) {
       'mixin',
       'vue2-dropzone',
       'vue-img-inputer',
-      'twzipcode-vue'
+      'twzipcode-vue',
+      'fontAwesome'
     ],
 
     // https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
