@@ -2,7 +2,7 @@
 q-page
   .row(style="padding:50px ; padding-top:150px ;")
     .col
-      q-table(ref='table' title='Treats' :data='orders' :columns='columns' row-key='name' :selected-rows-label='getSelectedString' selection='multiple' :selected='selected' @selection='onSelection' :pagination.sync="pagination" style="background: none; box-shadow:none")
+      q-table(ref='table' title='我的訂單' :data='orders' :columns='columns' row-key='name' :selected-rows-label='getSelectedString' selection='multiple' :selected='selected' @selection='onSelection' :pagination.sync="pagination" style="background: none; box-shadow:none")
         template(v-slot:body="props")
           q-tr
             q-td.text-center

@@ -1,8 +1,8 @@
 <template lang="pug">
 q-page
-  .row(style="padding:50px ; padding-top:170px ;")
-    .col-12.col-md-6.text-center
-      img(:src="image" style="height: 600px;")
+  .row(style="padding:30px ; padding-top:120px ;")
+    .col-12.col-md-6.text-center(style="height: 60%;")
+      img(:src="image" style="width: 80%;")
     .col-12.col-md-6
       h3 {{ name }}
       p 數量
