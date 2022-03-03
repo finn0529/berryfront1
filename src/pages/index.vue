@@ -8,17 +8,17 @@ q-page
     .wrapper
       swiper(ref='mySwiper' :options='swiperOptions')
         swiper-slide
-          img(src='../assets/img/product/IMG_1022.jpg')
+          img(src='../assets/img/product/product1_工作區域 1.png')
         swiper-slide
-          img(src='../assets/img/product/IMG_0120.jpg')
+          img(src='../assets/img/product/product2_工作區域 1.png')
         swiper-slide
-          img(src='../assets/img/product/IMG_0457.jpg')
+          img(src='../assets/img/product/product3_工作區域 1.png')
         swiper-slide
-          img(src='../assets/img/product/IMG_0467.jpg')
+          img(src='../assets/img/product/product4_工作區域 1.png')
         swiper-slide
-          img(src='../assets/img/product/IMG_0588.jpg')
+          img(src='../assets/img/product/product5_工作區域 1.png')
         swiper-slide
-          img(src='../assets/img/product/IMG_0610.jpg')
+          img(src='../assets/img/product/product6_工作區域 1.png')
       .swiper-button-next
       .swiper-button-prev
   section#section02
@@ -33,14 +33,14 @@ q-page
     .row(style="height:100%;")
       .col-12.col-md-6(style="position: relative;")
         #product01
-          img(src='../assets/img/product/IMG_1022.jpg')
+          img(src='../assets/img/product/product1_工作區域 1.png')
         #product02
-          img(src='../assets/img/product/IMG_0120.jpg')
+          img(src='../assets/img/product/product2_工作區域 1.png')
       .col-12.col-md-6(style="position: relative;")
         #product03
-          img(src='../assets/img/product/IMG_0457.jpg')
+          img(src='../assets/img/product/product3_工作區域 1.png')
         #product04
-          img(src='../assets/img/product/IMG_0610.jpg')
+          img(src='../assets/img/product/product4_工作區域 1.png')
   #section04
     .row
       .col-12.col-sm-6.col-md-3(v-for='product in products.slice(0, 4)' :key='product._id' style="height:50%" )
