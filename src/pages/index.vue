@@ -167,7 +167,7 @@ export default {
     overflow: hidden
     img
       position: absolute
-      height: 100%
+      height: 70%
       +poscenter
     &:hover
       transform: scale(110%)
@@ -180,7 +180,7 @@ export default {
     overflow: hidden
     img
       position: absolute
-      width: 992px
+      height: 100%
       +poscenter
     &:hover
       transform: scale(110%)
@@ -252,6 +252,8 @@ export default {
   color: #ff7e8f !important
 .bg-redpink
   background: #ff7e8f !important
+.swiper-button-next,.swiper-button-prev
+  color:#ff7e8f !important
 @media (min-width: 576px)
   #section01
     .sec01img01
@@ -290,6 +292,10 @@ export default {
       width: 28%
       left: 3%
       bottom: 20%
+  #section02
+    .secBottom
+      img
+        width: 992px
 @media (min-width: 992px)
   #section01
     .sec01img01
@@ -315,6 +321,4 @@ export default {
         width: 100%
   #section03
     height: 100vh
-  .swiper-button-next,.swiper-button-prev
-    color:#ff7e8f !important
 </style>
