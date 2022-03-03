@@ -320,6 +320,7 @@ export default {
     .secBottom
       img
         width: 100%
+        height: auto
   #section03
     height: 100vh
 </style>
