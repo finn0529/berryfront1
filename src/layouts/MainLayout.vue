@@ -92,7 +92,7 @@
         q-btn(flat round)
           i.fa-brands.fa-pinterest.fa-xl
       p © 2022 小莓波醬.
-      p(style="font-size: 25px;") 小莓波醬測試網站 下單交易不成立
+      //- p(style="font-size: 25px;") 小莓波醬測試網站 下單交易不成立
 </template>
 
 <style lang="sass">

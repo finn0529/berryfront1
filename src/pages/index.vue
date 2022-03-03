@@ -296,6 +296,7 @@ export default {
     .secBottom
       img
         width: 992px
+        height: auto
 @media (min-width: 992px)
   #section01
     .sec01img01
