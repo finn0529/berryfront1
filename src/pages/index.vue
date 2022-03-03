@@ -180,7 +180,7 @@ export default {
     overflow: hidden
     img
       position: absolute
-      height: 100%
+      width: 992px
       +poscenter
     &:hover
       transform: scale(110%)
@@ -192,8 +192,8 @@ export default {
     position: absolute
     right: 5%
     bottom: 10%
-    width: 360px
-    height: 480px
+    width: 300px
+    height: 400px
     &:hover
       transform: scale(110%)
     transition: 0.5s
@@ -290,14 +290,7 @@ export default {
       width: 28%
       left: 3%
       bottom: 20%
-  #section02
-    .secBottom
-      img
-        width: 100%
-        height: auto
 @media (min-width: 992px)
-  #section03
-    height: 100vh
   #section01
     .sec01img01
       position: absolute
@@ -307,15 +300,21 @@ export default {
       transform: translateX(-50%)
     .sec01img02
       position: absolute
-      width: 50%
+      width: 45%
       left: 50%
-      top: 6%
+      top: 14%
       transform: translateX(-50%)
     .sec01img03
       position: absolute
       width: 20%
       left: 8%
       bottom: 20%
-.swiper-button-next,.swiper-button-prev
-  color:#ff7e8f !important
+  #section02
+    .secBottom
+      img
+        width: 100%
+  #section03
+    height: 100vh
+  .swiper-button-next,.swiper-button-prev
+    color:#ff7e8f !important
 </style>
