@@ -7,7 +7,8 @@ q-page
           q-tr
             q-td.text-center
               q-checkbox(dense v-model="props.selected")
-            q-td.text-center {{ props.row._id }}
+            q-td.text-center
+              router-link(:to='"/order/" + props.row._id') {{ props.row._id }}
             q-td.text-center {{ props.row.date }}
             q-td.text-center
               p(v-if="props.row.pay") 已付款

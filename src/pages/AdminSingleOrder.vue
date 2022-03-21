@@ -1,13 +1,14 @@
 <template lang="pug">
-q-page(style="padding:50px ; padding-top:100px ")
+q-page(style="padding: 30px;")
   p(style="font-size: 30px;") 單號 {{ order._id }}
   p {{ order.date }}
-  p
+  q-btn(@click='updateOrder({pay:!order.pay});order.pay=!order.pay')
     span(v-if="order.pay") 已付款
     span(v-else) 未付款
-    span.q-ml-lg(v-if="order.ship") 已出貨
-    span.q-ml-lg(v-else) 未出貨
-  q-table(:data='order.products' :columns='columns' row-key='name' hide-bottom style="background: none; box-shadow:none" :pagination.sync="pagination")
+  q-btn(@click='updateOrder({ship:!order.ship});order.ship=!order.ship')
+    span(v-if="order.ship") 已出貨
+    span(v-else) 未出貨
+  q-table(:data='order.products' :columns='columns' row-key='name' hide-bottom style="background: none; box-shadow:none")
     template(v-slot:body="props")
       q-tr
         q-td.text-center
@@ -33,19 +34,13 @@ export default {
     }
   },
   methods: {
-    async updateOrder (change) {
-      change = !change
-      const condition = {
-        pay: this.order.pay,
-        ship: this.order.ship
-      }
+    async updateOrder (condition) {
       try {
-        const { data } = await this.api.patch('/orders/' + this.order._id, condition, {
+        await this.api.patch('/orders/' + this.order._id, condition, {
           headers: {
             authorization: 'Bearer ' + this.user.token
           }
         })
-        this.order.push(data.result)
       } catch (error) {
         console.log(error)
         this.$q.notify({

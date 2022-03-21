@@ -5,7 +5,7 @@ q-layout
       q-btn.lt-sm(flat @click='drawerLeft = !drawerLeft' round dense icon='menu' color='black')
       q-toolbar-title
         q-btn(flat to='/admin')
-          img(src="../assets/img/berry.png" width="100px")
+          img(src="../assets/img/finnflip_工作區域 1.png" width="100px")
   q-drawer(v-model='drawerLeft' show-if-above :width='200' :breakpoint='500' )
     q-list(style="color:black")
       q-item(clickable v-ripple active-class="white" to='/admin')

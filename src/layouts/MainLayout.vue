@@ -6,20 +6,23 @@
         q-btn.lt-sm(flat @click='drawerLeft = !drawerLeft' round dense icon='menu')
         q-toolbar-title
           q-btn(flat to='/')
-            img(src="../assets/img/berry.png" width="100px")
+            img(src="../assets/img/finnflip_工作區域 1.png" width="80px")
         .gt-xs
           q-btn(flat to='/')
-            span(style="color: rgb(250, 108, 132)") 首頁
+            span(style="color: #8ddcff") 首頁
           q-btn(flat)
-            span(style="color: rgb(250, 108, 132)") 最新消息
+            span(style="color: #8ddcff") 最新消息
           q-btn(flat to='/product')
-            span(style="color: rgb(250, 108, 132)") 所有商品
+            span(style="color: #8ddcff") 所有商品
           q-btn(flat)
-            span(style="color: rgb(250, 108, 132)") 購物須知
+            span(style="color: #8ddcff") 購物須知
           q-btn(v-if="!user.isLogin" flat round @click='signin = true' )
             img(src="../assets/icon/login_工作區域 1.png" width="25px")
-          q-btn-dropdown(flat v-if="user.isLogin" label='會員管理' style="color: rgb(250, 108, 132)")
+          q-btn-dropdown(flat v-if="user.isLogin" label='會員管理' style="color: #8ddcff")
             q-list
+              q-item(v-if="user.isAdmin" clickable to='/admin')
+                q-item-section
+                  q-item-label 官網管理
               q-item(clickable to='/order')
                 q-item-section
                   q-item-label 我的訂單
@@ -37,14 +40,14 @@
             q-form(align='center' @submit.prevent='login')
               q-card-section
                 .logo(align='center')
-                  img(src="../assets/img/berry.png" width="100px")
+                  img(src="../assets/img/finnflip_工作區域 1.png" width="100px")
               q-card-section.q-pt-none
                 q-input(label-color="redpink" color="redpink" v-model='signInForm.email' label='E-mail')
                 q-input(type='password' label-color="redpink" color="redpink" v-model='signInForm.password' label='Password' )
               q-card-actions.text-primary(align='center')
-                q-btn(flat style="color:#ff7e8f" label='註冊帳號' v-close-popup @click='signup = true')
-                q-btn(flat style="color:#ff7e8f" label='忘記密碼')
-              q-btn.q-mb-md(style="background: #ff7e8f; color:white" label='登入' v-close-popup type='submit')
+                q-btn(flat style="color:#8bb4cf" label='註冊帳號' v-close-popup @click='signup = true')
+                q-btn(flat style="color:#8bb4cf" label='忘記密碼')
+              q-btn.q-mb-md(style="background: #8bb4cf; color:white" label='登入' v-close-popup type='submit')
             q-btn(flat label='X' v-close-popup style='position: absolute; right: 0; top: 0')
         //註冊
         q-dialog(v-model='signup' persistent)
@@ -52,14 +55,14 @@
             q-form(align='center' @submit.prevent='register' @reset='onReset')
               q-card-section
                 .logo(align='center')
-                  img(src="../assets/img/berry.png" width="100px")
+                  img(src="../assets/img/finnflip_工作區域 1.png" width="100px")
               q-card-section.q-pt-none
                 q-input(label-color="redpink" color="redpink" v-model='signUpForm.email' label='E-mail' :rules="[ val => validator.isEmail(val) || '格式不正確' ]")
                 q-input(type='password' label-color="redpink" color="redpink" v-model='signUpForm.password' label='密碼' :rules="[ val => val.length >=4 && val.length <=20 || '4至20個字' ]")
                 q-input(type='password' label-color="redpink" color="redpink" v-model='signUpForm.passwordCheck' label='確認密碼' :rules="[ val => val === signUpForm.password|| '與密碼不相同' ]")
                 q-input(label-color="redpink" color="redpink" v-model='signUpForm.lastName' label='姓')
                 q-input(label-color="redpink" color="redpink" v-model='signUpForm.firstName' label='名')
-              q-btn.q-mb-md(style="background: #ff7e8f; color:white" label='註冊' type='submit')
+              q-btn.q-mb-md(style="background: #8bb4cf; color:white" label='註冊' type='submit')
               q-btn(flat label='已經有帳號了' v-close-popup @click='signin = true' style='position: absolute; right: 40px; bottom: 25px; color: rgb(143, 143, 143)' size="6px")
               q-btn(flat label='X' v-close-popup style='position: absolute; right: 0; top: 0' type='reset')
         q-drawer(v-model='drawerLeft' show-if-above elevated :width='200' :breakpoint='3000' background-color="redpink")
@@ -80,31 +83,32 @@
               q-item-section 登出
     q-page-container
       router-view
-    q-footer.text-center(style="padding:30px; height:200px; background:rgb(255, 171, 185)")
-      p 關注我們
-      .footerBtn.d-flex
-        q-btn(flat round)
-          i.fa-brands.fa-facebook.fa-xl
-        q-btn(flat round)
-          i.fa-brands.fa-instagram.fa-xl
-        q-btn(flat round)
-          i.fa-brands.fa-twitter.fa-xl
-        q-btn(flat round)
-          i.fa-brands.fa-pinterest.fa-xl
-      p © 2022 小莓波醬.
-      //- p(style="font-size: 25px;") 小莓波醬測試網站 下單交易不成立
+      q-footer.text-center(style="padding:30px; height:200px; background:#8bb4cf")
+        p 關注我們
+        .footerBtn.d-flex
+          q-btn(flat round)
+            i.fa-brands.fa-facebook.fa-xl
+          q-btn(flat round)
+            i.fa-brands.fa-instagram.fa-xl
+          q-btn(flat round)
+            i.fa-brands.fa-twitter.fa-xl
+          q-btn(flat round)
+            i.fa-brands.fa-pinterest.fa-xl
+        p © 2022 FinnFlip.
+        //- p(style="font-size: 25px;") 小莓波醬測試網站 下單交易不成立
 </template>
 
 <style lang="sass">
   #mainLayout
     .q-btn
-      color: rgb(250, 108, 132)
+      color: #8ddcff
+      filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.7))
     .q-field__label
-      color: #ff7e8f
+      color: #8ddcff
     .q-drawer
-      background: #ff7e8f
+      background: #8ddcff
   .text-redpink
-    color: #ff7e8f
+    color: #8ddcff
 </style>
 
 <script>

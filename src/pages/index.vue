@@ -1,87 +1,84 @@
 <template lang="pug">
 q-page
   section#section01(style="overflow: hidden;")
-    .sec01bg
-    img.sec01img01(src='../assets/img/heart_工作區域 1.png')
-    img.sec01img02(src='../assets/img/logoword_工作區域 1.png')
-    img.sec01img03(src='../assets/img/berrydrink_工作區域 1.png')
-    .wrapper
-      swiper(ref='mySwiper' :options='swiperOptions')
-        swiper-slide
-          img(src='../assets/img/product/product1_工作區域 1.png')
-        swiper-slide
-          img(src='../assets/img/product/product2_工作區域 1.png')
-        swiper-slide
-          img(src='../assets/img/product/product3_工作區域 1.png')
-        swiper-slide
-          img(src='../assets/img/product/product4_工作區域 1.png')
-        swiper-slide
-          img(src='../assets/img/product/product5_工作區域 1.png')
-        swiper-slide
-          img(src='../assets/img/product/product6_工作區域 1.png')
-      .swiper-button-next
-      .swiper-button-prev
+    q-carousel(animated v-model='slide' navigation infinite :autoplay='autoplay' arrows transition-prev='slide-right' transition-next='slide-left' @mouseenter='autoplay = false' @mouseleave='autoplay = true')
+      q-carousel-slide(:name='1' img-src='../assets/img/fotook-k0hB-U1401069467286d3-984x601@RC.jpeg')
+      q-carousel-slide(:name='2' img-src='../assets/img/Jhancarlos gonzalez foto Facebook.jpeg')
+      q-carousel-slide(:name='3' img-src='../assets/img/skateboard-art-1.jpeg')
+      q-carousel-slide(:name='4' img-src='../assets/img/T0FLMTMzOTQ3MjU3.jpeg')
   section#section02
     .row.secTop
       .col-6.featured#f01.d-flex
-        img(src='../assets/img/jssis.png')
+        img(src='../assets/img/sk81_工作區域 1.png')
       .col-6.featured#f02
-        img(src='../assets/img/kbsis.png')
+        img(src='../assets/img/fft1p.png')
     .row.secBottom
-      img(src="../assets/img/截圖 2022-02-08 下午1.59.33.png")
+      img(src="../assets/img//joinus.png")
   #section03
     .row(style="height:100%;")
       .col-12.col-md-6(style="position: relative;")
         #product01
-          img(src='../assets/img/product/product1_工作區域 1.png')
+          img(src='../assets/img/product/pppppp.png')
         #product02
-          img(src='../assets/img/product/product2_工作區域 1.png')
+          img(src='../assets/img/product/dwaddwa.png')
       .col-12.col-md-6(style="position: relative;")
         #product03
-          img(src='../assets/img/product/product3_工作區域 1.png')
+          img(src='../assets/img/product/fft1_工作區域 1.png')
         #product04
-          img(src='../assets/img/product/product4_工作區域 1.png')
+          img(src='../assets/img/product/fft3_工作區域 1.png')
   #section04
     .row
-      .col-12.col-sm-6.col-md-3(v-for='product in products.slice(0, 4)' :key='product._id' style="height:50%" )
-        .singleproduct.q-ma-lg(:to='"/singleProduct/" + product._id')
-          router-link#routerLink(:to='"/singleProduct/" + product._id')
-            .product-image.q-mb-md
-              q-img.p-image(:src='product.image')
-            .text-center
-              .title(style="font-size: 25px;") {{ product.name }}
-              .price NT${{ product.price }}
-          q-btn.addcart(unelevated rounded color="redpink" label="加入購物車" @click='addCart(product._id)')
+      .col-12(style="position: relative;")
+        swiper.swiper(ref='mySwiper' :options='swiperOptions' style="width:100%;")
+          swiper-slide(v-for='product in products' :key='product._id' style="height:50%")
+            .singleproduct.q-ma-lg(:to='"/singleProduct/" + product._id')
+              router-link#routerLink(:to='"/singleProduct/" + product._id')
+                .product-image.q-mb-md
+                  q-img.p-image(:src='product.image')
+                .text-center
+                  .title(style="font-size: 25px;") {{ product.name }}
+                  .price NT${{ product.price }}
+              q-btn.addcart.d-flex(unelevated rounded color="redpink" label="加入購物車" @click='addCart(product._id)')
+        .swiper-button-next
+        .swiper-button-prev
 </template>
 
 <script>
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
 export default {
   name: 'carrousel',
+  components: {
+    Swiper,
+    SwiperSlide
+  },
   data () {
     return {
+      slide: 1,
+      autoplay: true,
       swiperOptions: {
-        freeMode: true,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: true
-        },
+        loop: true,
+        // autoplay: {
+        //   delay: 5000,
+        //   disableOnInteraction: false
+        // },
         navigation: {
           nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-          hideOnClick: true
+          prevEl: '.swiper-button-prev'
         },
         breakpoints: {
           320: {
-            slidesPerView: 2,
-            spaceBetween: 150
+            slidesPerView: 1,
+            spaceBetween: 20
           },
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 120
+          600: {
+            slidesPerView: 2
           },
-          992: {
-            slidesPerView: 4,
-            spaceBetween: 100
+          960: {
+            slidesPerView: 3
+          },
+          1264: {
+            slidesPerView: 4
           }
         }
       },
@@ -118,41 +115,8 @@ export default {
   justify-content: center
   align-items: center
 #section01
-  overflow: hidden
-  .sec01bg
-    position: absolute
-    width: 100%
-    height: 100%
-    +poscenter
-  .sec01img01
-    position: absolute
-    width: 70%
-    left: 50%
-    top: 10%
-    transform: translateX(-50%)
-  .sec01img02
-    position: absolute
-    width: 70%
-    left: 50%
-    top: 20%
-    transform: translateX(-50%)
-  .sec01img03
-    position: absolute
-    width: 35%
-    left: 0
-    bottom: 20%
   .q-carousel
-    background: none
-  .wrapper
-    width: 65%
-    height: 300px
-    position: absolute
-    bottom: 5%
-    left: 35%
-    overflow: hidden
-    img
-      width: 210px
-      height: 280px
+    height: 100%
 #section02
   overflow: hidden
   background: #fcff8f
@@ -240,20 +204,24 @@ export default {
     .p-image
       height: 400px
     .addcart
+      padding: 0 !important
       position: absolute
       top: 50%
       left: 50%
       transform: translate(-50%,-50%)
+      justify-content: center
+      align-items: center
       display: none
+      text-align: center
   .singleproduct:hover
     .addcart
-      display: block
+      display: flex
 .text-redpink
-  color: #ff7e8f !important
+  color: #8bb4cf !important
 .bg-redpink
-  background: #ff7e8f !important
+  background: #8bb4cf !important
 .swiper-button-next,.swiper-button-prev
-  color:#ff7e8f !important
+  color:#8bb4cf !important
 @media (min-width: 576px)
   #section01
     .sec01img01
@@ -299,23 +267,6 @@ export default {
         height: auto
 @media (min-width: 992px)
   #section01
-    .sec01img01
-      position: absolute
-      width: 50%
-      left: 50%
-      top: 0
-      transform: translateX(-50%)
-    .sec01img02
-      position: absolute
-      width: 45%
-      left: 50%
-      top: 14%
-      transform: translateX(-50%)
-    .sec01img03
-      position: absolute
-      width: 20%
-      left: 8%
-      bottom: 20%
   #section02
     .secBottom
       img

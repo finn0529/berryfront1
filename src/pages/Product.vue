@@ -40,9 +40,9 @@ export default {
 </script>
 <style lang="sass">
   .bg-redpink
-    background: #ff7e8f !important
+    background: #8bb4cf !important
   .text-redpink
-    color: #ff7e8f !important
+    color: #8bb4cf !important
   .singleproduct
     position: relative
     cursor: pointer
