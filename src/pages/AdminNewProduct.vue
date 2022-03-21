@@ -61,13 +61,13 @@
       </q-editor>
       <q-select outlined v-model="form.category" :options="categories" color="black" bg-color="white" label="請選擇分類" />
       <q-input outlined v-model="form.price" color="black" bg-color="white" type="number" prefix="$"/>
-      <vue-dropzone v-model="form.image" id="dz-image" :options="dzoptions" :useCustomSlot=true>
+      <!-- <vue-dropzone v-model="form.image" id="dz-image" :options="dzoptions" :useCustomSlot=true>
         <div class="dropzone-custom-content">
           <h3 class="dropzone-custom-title">拖移檔案至此</h3>
           <div class="subtitle">或點擊並選擇檔案上傳</div>
         </div>
-      </vue-dropzone>
-      <!-- <img-inputer accept="image/*"
+      </vue-dropzone> -->
+      <img-inputer accept="image/*"
       v-model="form.image"
       theme="light"
       size="large"
@@ -75,12 +75,12 @@
       hover-text="點選或拖拽圖片以修改"
       placeholder="點選或拖拽選擇圖片"
       :max-size="1024"
-      exceed-size-text="檔案大小不能超過"></img-inputer> -->
+      exceed-size-text="檔案大小不能超過"></img-inputer>
       <div>
         <q-radio dense v-model="form.sell" :val="true" label="已上架" />
         <q-radio dense v-model="form.sell" :val="false" label="未上架" />
       </div>
-      <q-btn color="white" text-color="black" @click="cancelSave" to="/admin/product">取消</q-btn>
+      <q-btn color="white" text-color="black" @click="cancelSave" to="/admin/products">取消</q-btn>
       <q-btn color="blue-5" type="submitprevent">儲存</q-btn>
     </q-form>
   </div>
@@ -91,12 +91,12 @@ export default {
     return {
       products: [],
       BtnDisabled: false,
-      dzoptions: {
-        url: 'https://httpbin.org/post',
-        thumbnailWidth: 200,
-        addRemoveLinks: true,
-        maxFilesize: 100
-      },
+      // dzoptions: {
+      //   url: 'https://httpbin.org/post',
+      //   thumbnailWidth: 200,
+      //   addRemoveLinks: true,
+      //   maxFilesize: 100
+      // },
       categories: [
         '上衣', '褲子', '裙子', '洋裝', '配飾'
       ],
@@ -104,7 +104,7 @@ export default {
         name: '',
         price: null,
         description: '',
-        image: [],
+        image: null,
         sell: false,
         category: '',
         files: null,
@@ -141,15 +141,8 @@ export default {
       const fd = new FormData()
       for (const key in this.form) {
         if (key !== '_id') {
-          if (key !== 'image') {
-            if (key !== 'coloroptions') {
-              fd.append(key, this.form[key])
-            }
-          }
+          fd.append(key, this.form[key])
         }
-      }
-      for (const file of this.form.image) {
-        fd.append('image', file)
       }
 
       try {
@@ -168,7 +161,6 @@ export default {
           })
           this.products[this.form.index] = { ...this.form, image: data.result.image }
           this.products.push(data.result)
-          console.log(fd)
         }
         this.$router.push('/admin/product')
         this.$q.notify({
@@ -176,7 +168,6 @@ export default {
           type: 'positive'
         })
       } catch (error) {
-        console.log(this.form)
         this.$q.notify({
           message: error.response.data.message,
           type: 'negative'
