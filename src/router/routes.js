@@ -5,7 +5,7 @@ const routes = [
     name: 'MainLayout',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', name: 'Home', component: () => import('pages/index.vue'), meta: { title: '小莓波醬' } },
+      { path: '', name: 'Home', component: () => import('pages/index.vue'), meta: { title: 'FinnFlip' } },
       { path: 'product', name: 'Product', component: () => import('pages/Product.vue'), meta: { title: '所有商品' } },
       { path: 'singleProduct/:id', name: 'singleProduct', component: () => import('pages/SingleProduct.vue') },
       { path: 'account', name: 'Account', component: () => import('pages/Account.vue'), meta: { login: true, title: '我的帳號' } },
