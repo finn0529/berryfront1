@@ -1,0 +1,1 @@
+.bg-redpink{background:#8bb4cf!important}.text-redpink{color:#8bb4cf!important}.singleproduct{position:relative;cursor:pointer}.singleproduct .p-image{height:400px}.singleproduct .addcart{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:none}.singleproduct:hover .addcart{display:block}
